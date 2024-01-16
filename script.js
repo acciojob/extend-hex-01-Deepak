@@ -1,6 +1,6 @@
 const extendHex = (shortHex) => {
   // write your code here
-	let hexCode = ["#"]
+	let hexCode = ["#"],
 		isCapital = false;
 	shortHex = shortHex.replace("#", "");
 	for(let i=0; i<shortHex.length; i++){
