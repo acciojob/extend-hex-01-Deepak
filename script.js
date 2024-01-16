@@ -12,7 +12,7 @@ const extendHex = (shortHex) => {
 			break;
 		}
 	}
-	for(let i-0; i< shortHex.length; i++){
+	for(let i=0; i< shortHex.length; i++){
 		if(isCapital){
 			hexCode.push(shortHex.charAt(i).toUpperCase());
 			hexCode.push(shortHex.charAt(i).toUpperCase());
