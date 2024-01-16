@@ -1,20 +1,31 @@
 const extendHex = (shortHex) => {
   // write your code here
-	if (typeof shortHex !== 'string' || (shortHex.length !== 4 && shortHex.length !== 7) || shortHex[0] !== '#') {
-    throw new Error("Invalid input. Please provide a valid short hex code.");
-  }
-
-  // Extract color components
-  const r = shortHex[1].repeat(2) || shortHex.slice(1, 3);
-  const g = shortHex[2].repeat(2) || shortHex.slice(3, 5);
-  const b = shortHex[3].repeat(2) || shortHex.slice(5);
-
-  // Construct and return the full hex code
-  const fullHex = `#${r}${g}${b}`;
-  return fullHex;
-
+	let hexCode = ["#"]
+		isCapital = false;
+	shortHex = shortHex.replace("#", "");
+	for(let i=0; i<shortHex.length; i++){
+		if(
+			shortHex.charAt(i) === shortHex.charAt(i).toUpperCase() &&
+			shortHex.charAt(i) !== shortHex.charAt(i).toLowerCase()
+		) {
+			isCapital = true;
+			break;
+		}
+	}
+	for(let i-0; i< shortHex.length; i++){
+		if(isCapital){
+			hexCode.push(shortHex.charAt(i).toUpperCase());
+			hexCode.push(shortHex.charAt(i).toUpperCase());
+		} else {
+			hexCode.push(shortHex.charAt(i));
+			hexCode.push(shortHex.charAt(i));
+		}
+	}
+	return hexCode.join("");
 };
 
+
+
 // Do not change the code below.
-const shortHex = prompt("Enter Short Hex.");
-alert(extendHex(shortHex));
+	const shortHex = prompt("Enter Short Hex.");
+	alert(extendHex(shortHex));
